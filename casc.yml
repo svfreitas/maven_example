@@ -1,0 +1,28 @@
+jenkins:
+  systemMessage: "Welcome Jenkins DevOps Box"
+  securityRealm:
+    local:
+      allowsSignup: false
+      enableCaptcha: false
+      users:
+       - id: ${JENKINS_ADMIN_ID}
+         password: ${JENKINS_ADMIN_PASSWORD}
+  authorizationStrategy:
+    loggedInUsersCanDoAnything:
+      allowAnonymousRead: false
+  clouds:
+    - docker:
+        name: "docker"
+        dockerApi:
+          dockerHost:
+            uri: ${DOCKER_HOST_URI}
+        templates:
+          - labelString: "djava-docker-slave"
+            dockerTemplateBase:
+              image: "bibinwilson/jenkins-slave:latest"
+              bindPorts : "host.docker.interna:22001:22"
+              remoteFs: "/home/jenkins"
+            connector:
+              attach:
+                user: "jenkins"
+            instanceCapStr: "1"      
