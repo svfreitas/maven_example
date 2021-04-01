@@ -83,7 +83,6 @@ pipeline {
     post {
         always {
             junit 'target/surefire-reports/*.xml' 
-            archiveArtifacts artifacts: '**/maven-simple-*-SNAPSHOT*.jar', onlyIfSuccessful: true
         }
     }
 }
