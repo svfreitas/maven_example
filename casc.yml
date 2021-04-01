@@ -17,7 +17,7 @@ jenkins:
           dockerHost:
             uri: ${DOCKER_HOST_URI}
         templates:
-          - labelString: "djava-docker-slave"
+          - labelString: "java-docker-slave"
             dockerTemplateBase:
               image: "bibinwilson/jenkins-slave:latest"
               bindPorts : "host.docker.interna:22001:22"
