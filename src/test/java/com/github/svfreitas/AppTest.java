@@ -12,7 +12,7 @@ public class AppTest
     @Test
     public void testApp()
     {
-        assertEquals("Hello DevOpsBox", app.greet("DevOpsBox"));
+        assertEquals("Hello DevOpsBox", app.greet("DevOpsBoxX"));
     }
 
     @Test
