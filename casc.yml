@@ -20,7 +20,7 @@ jenkins:
           - labelString: "java-docker-slave"
             dockerTemplateBase:
               image: "bibinwilson/jenkins-slave:latest"
-              bindPorts : "host.docker.interna:22001:22"
+              bindPorts : "host.docker.internal:22001:22"
             remoteFs: "/home/jenkins"
             connector:
               attach:
