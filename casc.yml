@@ -21,7 +21,7 @@ jenkins:
             dockerTemplateBase:
               image: "bibinwilson/jenkins-slave:latest"
               bindPorts : "host.docker.interna:22001:22"
-              remoteFs: "/home/jenkins"
+            remoteFs: "/home/jenkins"
             connector:
               attach:
                 user: "jenkins"
