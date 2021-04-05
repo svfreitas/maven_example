@@ -26,3 +26,12 @@ jenkins:
               attach:
                 user: "jenkins"
             instanceCapStr: "1"      
+  credentials:
+    system:
+      domainCredentials:
+        credentials:
+          - usernamePassword:
+              scope: SYSTEM
+              id: "nexus-credentials"
+              username: "${NEXUS_REPOSITORY_USERNAME}"
+              password: "${NEXUS_REPOSITORY_PASSWORD}"         
